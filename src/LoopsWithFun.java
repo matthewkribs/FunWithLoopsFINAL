@@ -34,6 +34,10 @@ public class LoopsWithFun extends javax.swing.JFrame {
         endNumberInput = new javax.swing.JTextField();
         showValues = new javax.swing.JButton();
         finalDisplay = new javax.swing.JLabel();
+        MenuTab = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        ExitOption = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,6 +64,27 @@ public class LoopsWithFun extends javax.swing.JFrame {
             }
         });
 
+        finalDisplay.setFont(new java.awt.Font("MicrogrammaDEEBolExt", 0, 18)); // NOI18N
+        finalDisplay.setForeground(new java.awt.Color(51, 51, 255));
+
+        jMenu1.setText("File");
+
+        ExitOption.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F1, 0));
+        ExitOption.setText("Exit");
+        ExitOption.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ExitOptionActionPerformed(evt);
+            }
+        });
+        jMenu1.add(ExitOption);
+
+        MenuTab.add(jMenu1);
+
+        jMenu2.setText("Edit");
+        MenuTab.add(jMenu2);
+
+        setJMenuBar(MenuTab);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -69,15 +94,17 @@ public class LoopsWithFun extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Title, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(finalDisplay, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(startingNumberText, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
-                            .addComponent(endingNumberText, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(55, 55, 55)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(showValues, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(endNumberInput)
-                            .addComponent(startNumberInput))
+                            .addComponent(finalDisplay, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(startingNumberText, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
+                                    .addComponent(endingNumberText, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(55, 55, 55)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(showValues, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(endNumberInput)
+                                    .addComponent(startNumberInput))))
                         .addGap(0, 92, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -96,7 +123,7 @@ public class LoopsWithFun extends javax.swing.JFrame {
                     .addComponent(endNumberInput))
                 .addGap(18, 18, 18)
                 .addComponent(showValues)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(finalDisplay, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(22, 22, 22))
         );
@@ -119,6 +146,10 @@ public class LoopsWithFun extends javax.swing.JFrame {
         }
         finalDisplay.setText(pool);
     }//GEN-LAST:event_showValuesActionPerformed
+
+    private void ExitOptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitOptionActionPerformed
+    System.exit(0);
+    }//GEN-LAST:event_ExitOptionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -156,10 +187,14 @@ public class LoopsWithFun extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem ExitOption;
+    private javax.swing.JMenuBar MenuTab;
     private javax.swing.JLabel Title;
     private javax.swing.JTextField endNumberInput;
     private javax.swing.JLabel endingNumberText;
     private javax.swing.JLabel finalDisplay;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
     private javax.swing.JButton showValues;
     private javax.swing.JTextField startNumberInput;
     private javax.swing.JLabel startingNumberText;
